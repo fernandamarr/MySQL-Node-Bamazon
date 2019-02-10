@@ -43,3 +43,8 @@ npm install
 node bamazonCustomer.js
 ```
 
+## Technologies Used
+
+* MySQL
+* Node.js
+* JavaScript
