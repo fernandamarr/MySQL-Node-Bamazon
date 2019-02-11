@@ -1,3 +1,4 @@
+require('dotenv').config()
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 const cTable = require('console.table')
@@ -9,7 +10,7 @@ var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "yourRootPassword",
+    password: process.env.PASSWORD,
     database: "bamazon_DB"
 });
 
@@ -23,7 +24,7 @@ function readProducts() {
     console.log("Welcome to Bamazon! Here are all our available items:\n".yellow)
     connection.query("SELECT item_id,product_name,price FROM products", function (err, res) {
         if (err) throw err;
-        console.table(res);
+        console.table(res.item_id + res.product_name + "$" + res.price);
         start();
     })
 }

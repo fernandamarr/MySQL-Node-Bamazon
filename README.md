@@ -18,7 +18,7 @@ Follow these steps to get started with Bamazon
 
 ## Clone the Repository
 
-1. Clone this repository to your local directory and navigate to it by running the following commands:
+Clone this repository to your local directory and navigate to it by running the following commands:
 
 ``` js
 git clone git@github.com:fernandamarr/MySQL-Node-Bamazon.git
