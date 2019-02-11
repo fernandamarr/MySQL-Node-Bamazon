@@ -22,9 +22,11 @@ connection.connect(function (err) {
 
 function readProducts() {
     console.log("Welcome to Bamazon! Here are all our available items:\n".yellow)
-    connection.query("SELECT item_id,product_name,price FROM products", function (err, res) {
+    connection.query("SELECT * FROM products", function (err, res) {
         if (err) throw err;
-        console.table(res.item_id + res.product_name + "$" + res.price);
+        for (var i = 0; i < res.length; i++) {
+            console.table(res[i].item_id + "  |  " + res[i].product_name + "  |  " + "$" + res[i].price + "\n__________________________________________\n");
+        }
         start();
     })
 }
@@ -105,7 +107,7 @@ function shop() {
                         }
                     );
                 } else {
-                    console.log("We can't match your order. We only have " + chosenItem.stock_quantity + " left");
+                    console.log("\nWe can't match your order. We only have " + chosenItem.stock_quantity + " left\n");
                     keepShopping();
                 }
             })
