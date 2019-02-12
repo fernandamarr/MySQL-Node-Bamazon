@@ -21,11 +21,11 @@ connection.connect(function (err) {
 });
 
 function readProducts() {
-    console.log("Welcome to Bamazon! Here are all our available items:\n".yellow)
+    console.log("Here are all our available items:\n".yellow)
     connection.query("SELECT * FROM products", function (err, res) {
         if (err) throw err;
         for (var i = 0; i < res.length; i++) {
-            console.table(res[i].item_id + "  |  " + res[i].product_name + "  |  " + "$" + res[i].price + "\n__________________________________________\n");
+            console.table(res[i].item_id + "  |  " + res[i].product_name + "  |  " + "$" + res[i].price + "\n");
         }
         start();
     })
