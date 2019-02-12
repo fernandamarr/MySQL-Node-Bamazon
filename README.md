@@ -18,7 +18,7 @@ Bamazon is a CLI App that uses MySQL calls to manage the localhost database, upd
 
 ### Bamazon Customer
 
-* Displays a table with product ID, name, department, price and quantity
+* Displays a table with product ID, name, and price 
   
 * Prompts customer to place an order
   
